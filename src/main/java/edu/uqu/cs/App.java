@@ -1,4 +1,5 @@
 package edu.uqu.cs;
+import java.util.Scanner;
 /*
  * Lab 0 
  * CS 1312
@@ -44,7 +45,11 @@ public class App{
 */
  
     public static void main(String [] args) {
-        
+        twisters();
+        System.out.println(" ");
+        Scanner input = new Scanner(System.in);
+        System.out.println("please Enter a string");
+        phoneKeypad(input.nextLine());
 
         /* Write your code here */
      
@@ -54,5 +59,57 @@ public class App{
 
 
     }
+    public static void twisters() {
+       
 
+            for (int result = 1; result <= 110; result++) {
+    
+                if (result % 2 == 0) {
+                    System.out.print("Tweetle");
+    
+                    if (result % 4 == 0) {
+                        System.out.print("Beetle");
+                    }
+    
+                    if (result % 6 == 0) {
+                        System.out.print("Poodle");
+                    }
+                }
+                else {
+                    System.out.print(" " + result + " ");
+                }
+            }
+        }
+
+    
+    
+
+      
+      
+        
+       
+        public static void phoneKeypad(String text) {
+            String result = "";
+            for (int i = 0; i < text.length(); i++) {
+                char ch = text.toUpperCase().charAt(i);
+                if (ch >= 'A' && ch <= 'C') {
+                    result += "2";
+                } else if (ch >= 'D' && ch <= 'F') {
+                    result += "3";
+                } else if (ch >= 'G' && ch <= 'I') {
+                    result += "4";
+                } else if (ch >= 'J' && ch <= 'L') {
+                    result += "5";
+                } else if (ch >= 'M' && ch <= 'O') {
+                    result += "6";
+                } else if (ch >= 'P' && ch <= 'S') {
+                    result += "7";
+                } else if (ch >= 'T' && ch <= 'V') {
+                    result += "8";
+                } else if (ch >= 'W' && ch <= 'Z') {
+                    result += "9";
+                }
+            }
+            System.out.println(result);
+        }
 }
